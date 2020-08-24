@@ -1,0 +1,33 @@
+.container {
+  max-width: 36rem;
+  min-width: min-content;
+  padding: 0 1rem;
+  margin: 3rem auto 6rem;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headerImage {
+  width: 6rem;
+  height: 6rem;
+}
+
+.headerHomeImage {
+  width: 8rem;
+  height: 8rem;
+}
+
+.backToHome {
+  color: #0070f3;
+}
+
+@media (max-width: 360px) {
+  .headerHomeImage {
+    width: 40%;
+    height: 40%;
+  }
+}
