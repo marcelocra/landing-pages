@@ -13,6 +13,7 @@ specifiers:
   eslint: ^8.16.0
   eslint-config-prettier: ^8.3.0
   eslint-plugin-svelte3: ^4.0.0
+  marked: ^4.0.18
   prettier: ^2.6.2
   prettier-plugin-svelte: ^2.7.0
   svelte: ^3.46.0
@@ -25,6 +26,7 @@ specifiers:
 dependencies:
   '@fontsource/fira-mono': 4.5.9
   cookie: 0.4.2
+  marked: 4.0.18
 
 devDependencies:
   '@playwright/test': 1.25.0
@@ -1363,6 +1365,12 @@ packages:
     dependencies:
       semver: 6.3.0
     dev: true
+
+  /marked/4.0.18:
+    resolution: {integrity: sha512-wbLDJ7Zh0sqA0Vdg6aqlbT+yPxqLblpAZh1mK2+AO2twQkPywvvqQNfEPVwSSRjZ7dZcdeVBIAgiO7MMp3Dszw==}
+    engines: {node: '>= 12'}
+    hasBin: true
+    dev: false
 
   /merge2/1.4.1:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
