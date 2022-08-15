@@ -1,4 +1,4 @@
-FROM node:lts
+FROM node:16.16-slim
 
 RUN corepack enable
 RUN pnpm add -g pnpm
