@@ -6,6 +6,6 @@ pnpm build
 # Tell github not to use jekyll, otherwise the site won't work.
 touch ./build/.nojekyll
 
-# I'm using 'site' folder in github as the deploy location.
-mv build site
+# I'm using 'docs' folder in github as the deploy location.
+mv build docs
 
