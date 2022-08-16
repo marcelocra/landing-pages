@@ -10,6 +10,9 @@ const config = {
 
 	kit: {
 		adapter: adapter(),
+		prerender: {
+			default: true
+		},
 
 		// Override http methods in the Todo forms
 		methodOverride: {
