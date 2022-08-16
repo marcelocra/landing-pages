@@ -1,3 +1,4 @@
+// @ts-ignore
 export async function GET({ params }) {
 	return {
 		status: 200,
