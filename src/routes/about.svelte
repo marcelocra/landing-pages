@@ -20,19 +20,16 @@
 </svelte:head>
 
 <div class="content">
-	<h1>About this app</h1>
+	<h2>Apêndice</h2>
 
 	<p>
-		This is a <a href="https://kit.svelte.dev">SvelteKit</a> app. You can make your own by typing the
-		following into your command line and following the prompts:
+		Esse app foi construído usando <a href="https://kit.svelte.dev">SvelteKit</a>. Para fazer o seu
+		próprio, siga as instruções <a href="https://mcra.dev/hello-world">desse post</a>.
 	</p>
-
-	<pre>npm create svelte@latest</pre>
-
 	<p>
-		The page you're looking at is purely static HTML, with no client-side interactivity needed.
-		Because of that, we don't need to load any JavaScript. Try viewing the page's source, or opening
-		the devtools network panel and reloading.
+		Inclusive, essa página contém HTML estático (puro), sem nenhum tipo de interatividade no
+		client-side. Ou seja, não carrega nenhum tipo de JavaScript. Se quiser conferir, abra o código
+		fonte ou use os devtools na aba de rede e recarregue.
 	</p>
 </div>
 
