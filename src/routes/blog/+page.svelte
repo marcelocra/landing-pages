@@ -1,10 +1,9 @@
-<script>
-	throw new Error("@migration task: Add data prop (https://github.com/sveltejs/kit/discussions/5774#discussioncomment-3292707)");
+<script lang="ts">
+	import type { PageData } from './$types';
 
-	// @ts-nocheck Don't care about types for marked.
+	// @ts-ignore
 	import { parse } from 'marked';
-
-	export let value;
+	export let data: PageData;
 </script>
 
 <svelte:head>
@@ -13,7 +12,7 @@
 </svelte:head>
 
 <section>
-	this is the value: {value}
+	this is the value: {data.value}
 </section>
 
 <style></style>
