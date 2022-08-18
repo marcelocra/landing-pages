@@ -51,29 +51,35 @@ jobs:
           cache: pnpm
 
       - name: Cache node_modules
+        id: node_modules_cache
         uses: actions/cache@v3
         with:
           path: node_modules
           key: ${{ runner.os }}-node-modules-${{ secrets.CACHE_RANDOM_STRING }}-${{ hashFiles('pnpm-lock.yaml') }}
 
       - name: Install dependencies
+        if: steps.node_modules_cache.outputs.cache-hit != 'true'
         run: pnpm install --frozen-lockfile
 
       - name: Cache build
+        id: build_cache
         uses: actions/cache@v3
         with:
           path: build
-          key: ${{ runner.os }}-build-${{ secrets.CACHE_RANDOM_STRING }}-${{ hashFiles('src/**') }}
+          key: ${{ runner.os }}-build-${{ secrets.CACHE_RANDOM_STRING }}-${{ hashFiles('src/**', 'static/**', 'pnpm-lock.yaml', '*config*') }}
 
       - name: Build site
+        if: steps.build_cache.outputs.cache-hit != 'true'
         run: pnpm run build
 
       - name: Upload artifact
+        if: steps.build_cache.outputs.cache-hit != 'true'
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload site directory.
           path: './build'
 
       - name: Deploy to GitHub Pages
+        if: steps.build_cache.outputs.cache-hit != 'true'
         id: deployment
         uses: actions/deploy-pages@v1
