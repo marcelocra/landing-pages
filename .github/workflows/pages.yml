@@ -35,31 +35,45 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Setup Pages
+
+      - name: Setup GitHub Pages
         uses: actions/configure-pages@v1
+
       - name: Install pnpm
         uses: pnpm/action-setup@v2
         with:
           version: 7.9.0
+
       - name: Setup node
         uses: actions/setup-node@v3
         with:
           node-version: 16.16.0
           cache: pnpm
+
       - name: Cache node_modules
         uses: actions/cache@v3
         with:
           path: node_modules
           key: ${{ runner.os }}-node-modules-${{ secrets.CACHE_RANDOM_STRING }}-${{ hashFiles('pnpm-lock.yaml') }}
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
+
+      - name: Cache build
+        uses: actions/cache@v3
+        with:
+          path: build
+          key: ${{ runner.os }}-build-${{ secrets.CACHE_RANDOM_STRING }}-${{ hashFiles('**.svelte', '**.[tj]sx?') }}
+
       - name: Build site
         run: pnpm run build
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload site directory.
           path: './build'
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
