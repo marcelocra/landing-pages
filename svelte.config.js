@@ -13,6 +13,7 @@ const config = {
 		prerender: {
 			default: true
 		},
+		trailingSlash: 'always',
 
 		// Override http methods in the Todo forms
 		methodOverride: {
