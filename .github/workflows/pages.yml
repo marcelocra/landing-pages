@@ -33,40 +33,37 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup GitHub Pages
-        uses: actions/configure-pages@v1
-
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-        with:
-          version: 7.9.0
-
-      - name: Setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16.16.0
-          cache: pnpm
-
-      - name: Cache node_modules
-        id: node_modules_cache
-        uses: actions/cache@v3
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-modules-${{ secrets.CACHE_RANDOM_STRING }}-${{ hashFiles('pnpm-lock.yaml') }}
-
-      - name: Install dependencies
-        if: steps.node_modules_cache.outputs.cache-hit != 'true'
-        run: pnpm install --frozen-lockfile
-
-      - name: Cache build
+      - name: Cache
         id: build_cache
         uses: actions/cache@v3
         with:
           path: build
           key: ${{ runner.os }}-build-${{ secrets.CACHE_RANDOM_STRING }}-${{ hashFiles('src/**', 'static/**', 'pnpm-lock.yaml', '*config*') }}
+
+      - name: Checkout
+        if: steps.build_cache.outputs.cache-hit != 'true'
+        uses: actions/checkout@v3
+
+      - name: Setup GitHub Pages
+        if: steps.build_cache.outputs.cache-hit != 'true'
+        uses: actions/configure-pages@v1
+
+      - name: Install pnpm
+        if: steps.build_cache.outputs.cache-hit != 'true'
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7.9.0
+
+      - name: Setup node
+        if: steps.build_cache.outputs.cache-hit != 'true'
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.16.0
+          cache: pnpm
+
+      - name: Install dependencies
+        if: steps.build_cache.outputs.cache-hit != 'true'
+        run: pnpm install --frozen-lockfile
 
       - name: Build site
         if: steps.build_cache.outputs.cache-hit != 'true'
