@@ -1,5 +1,7 @@
-import { redirect } from '@sveltejs/kit';
+import { shortlinks } from './shortlinks';
 
 export function load() {
-	throw redirect(302, 'https://github.com/marcelocra');
+	return {
+		links: shortlinks
+	};
 }

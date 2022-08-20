@@ -1,12 +1,8 @@
 import { error, redirect, type LoadEvent } from '@sveltejs/kit';
 
-const shortLinkToFullURL = new Map(
-	Array.from(
-		Object.entries({
-			google: 'https://google.com'
-		})
-	)
-);
+import { shortlinks } from '../shortlinks';
+
+const shortLinkToFullURL = new Map(shortlinks);
 
 export function load({ params }: LoadEvent) {
 	const fullURL = shortLinkToFullURL.get(params.shortLink);
