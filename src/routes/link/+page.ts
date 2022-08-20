@@ -1,6 +1,5 @@
 import { redirect } from '@sveltejs/kit';
 
-/** @type {import('./$types').PageLoad} */
-export function load({ params }) {
+export function load() {
 	throw redirect(302, 'https://github.com/marcelocra');
 }
