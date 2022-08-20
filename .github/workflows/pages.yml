@@ -36,13 +36,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Cache `build` folder
-        id: build_cache
-        uses: actions/cache@v3
-        with:
-          path: build
-          key: ${{ runner.os }}-node_modules-${{ secrets.CACHE_RANDOM_STRING }}-${{ hashFiles('src/**', 'static/**', 'pnpm-lock.yaml', '*config*') }}
-
       - name: Cache `node_modules` folder
         id: node_modules_cache
         uses: actions/cache@v3
@@ -51,17 +44,14 @@ jobs:
           key: ${{ runner.os }}-build-${{ secrets.CACHE_RANDOM_STRING }}-${{ hashFiles('pnpm-lock.yaml') }}
 
       - name: Setup GitHub Pages
-        if: steps.build_cache.outputs.cache-hit != 'true'
         uses: actions/configure-pages@v1
 
       - name: Install pnpm
-        if: steps.build_cache.outputs.cache-hit != 'true'
         uses: pnpm/action-setup@v2
         with:
           version: 7.9.0
 
       - name: Setup node
-        if: steps.build_cache.outputs.cache-hit != 'true'
         uses: actions/setup-node@v3
         with:
           node-version: 16.16.0
@@ -72,17 +62,14 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build site
-        if: steps.build_cache.outputs.cache-hit != 'true'
         run: pnpm run build
 
       - name: Upload artifact
-        if: steps.build_cache.outputs.cache-hit != 'true'
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload site directory.
           path: './build'
 
       - name: Deploy to GitHub Pages
-        if: steps.build_cache.outputs.cache-hit != 'true'
         id: deployment
         uses: actions/deploy-pages@v1
