@@ -26,23 +26,23 @@
 		<div class="px-1 text-left font-sans">
 			Olá! Meu nome é <strong>Marcelo</strong>, sou desenvolvedor e
 			<strong>em breve</strong>
-			aqui você poderá conferir meus principais projetos e mídias.
+			aqui você poderá conferir meus principais projetos e mídias, só clicar
+			nos itens abaixo.
 		</div>
 	</div>
 </figure>
 
 <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
 	{#each data.sections as section}
-		<div class="p-3 border border-slate-300 rounded-md">
 			<a
-				class="text-black"
+				class="text-black p-3 border border-slate-300 rounded-md"
 				href={section.link ?? '#'}
 				on:click={() => {
 					if (section.link) {
 						return;
 					}
 
-					alert('🚧 Site em construção! Volte em breve! ;)');
+					alert('🚧 Site em construção! Volte em breve!😉🚀🔥');
 				}}
 			>
 				{#if section.title}
@@ -54,6 +54,5 @@
 						{section.description}
 					</div>{/if}
 			</a>
-		</div>
 	{/each}
 </div>
