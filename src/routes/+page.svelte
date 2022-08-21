@@ -10,7 +10,7 @@
 
 <svelte:head>
 	<title>Home - Marcelo Almeida</title>
-	<meta name="description" content="Esse é o site do Marcelo Almeida" />
+	<meta name="description" content="Aqui você vai aprender sobre design de software, programação, ferramentas de desenvolvimento e produtividade, e muito mais." />
 </svelte:head>
 
 <figure class="rounded-xl">

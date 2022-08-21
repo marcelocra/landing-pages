@@ -2,7 +2,7 @@
 	<title>Sobre - Marcelo Almeida</title>
 	<meta
 		name="description"
-		content="Essa é a página 'Sobre', do site do Marcelo Almeida"
+		content="Aqui você vai descobrir porque faz sentido (ou não) ler o que está escrito nesse site."
 	/>
 </svelte:head>
 
