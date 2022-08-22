@@ -18,6 +18,8 @@
 		class="w-32 h-32 md:w-48 md:h-auto rounded-full mx-auto drop-shadow-lg"
 		src={profilePicture}
 		alt="Marcelo smiling at the camera, with light blue and light ping background."
+		width="192"
+		height="192"
 	/>
 	<div class="my-3 text-center space-y-4">
 		<div class="text-4xl font-extrabold font-sans">Marcelo Almeida</div>
