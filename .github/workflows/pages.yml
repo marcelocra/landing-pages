@@ -61,6 +61,9 @@ jobs:
         if: steps.node_modules_cache.outputs.cache-hit != 'true'
         run: pnpm install --frozen-lockfile
 
+      - name: Compress images
+        run: pnpm run compress-images
+
       - name: Build site
         run: pnpm run build
 
