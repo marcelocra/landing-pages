@@ -1,5 +1,5 @@
 <script lang="ts">
-	import profilePicture from '$lib/assets/profile.png';
+	import profilePicture from '$lib/assets/profile.min.webp';
 
 	import type { PageData } from './$types';
 
