@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { api } from './_api';
 import type { RequestHandler } from './__types';
 
