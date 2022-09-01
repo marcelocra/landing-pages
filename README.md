@@ -1,6 +1,7 @@
 # create-svelte
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+Everything you need to build a Svelte project, powered by
+[`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
 ## Creating a project
 
@@ -16,7 +17,8 @@ npm create svelte@latest my-app
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+Once you've created a project and installed dependencies with `npm install` (or
+`pnpm install` or `yarn`), start a development server:
 
 ```bash
 npm run dev
@@ -35,17 +37,18 @@ npm run build
 
 You can preview the production build with `npm run preview`.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+> To deploy your app, you may need to install an
+> [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
 
 ## Apendix
 
 ### Creating a new app
 
 ```bash
-$ npm create svelte@latest .     
+$ npm create svelte@latest .
 Need to install the following packages:
   create-svelte@latest
-Ok to proceed? (y) 
+Ok to proceed? (y)
 
 create-svelte version 2.0.0-next.152
 
@@ -56,7 +59,7 @@ This is beta software; expect bugs and missing features.
 Problems? Open an issue on https://github.com/sveltejs/kit/issues if none exists already.
 
 ✔ Where should we create your project?
-  (leave blank to use current directory) … 
+  (leave blank to use current directory) …
 ✔ Directory not empty. Continue? … yes
 ✔ Which Svelte app template? › SvelteKit demo app
 ✔ Add type checking with TypeScript? › Yes, using TypeScript syntax
