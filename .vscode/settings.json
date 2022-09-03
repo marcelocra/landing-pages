@@ -1,0 +1,9 @@
+{
+	"files.exclude": {
+		"**/.pnpm-store": true,
+		"**/.svelte-kit": true,
+		"**/node_modules": true,
+		"**/blog/public": true,
+		"**/blog/resources": true
+	}
+}
