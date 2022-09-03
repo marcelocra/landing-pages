@@ -12,8 +12,7 @@
 		"lint": "prettier --check --plugin-search-dir=. . && eslint .",
 		"format": "prettier --write --plugin-search-dir=. .",
 		"compress-images": "./scripts/compress-images.js",
-    "change-eof-to-lf": "prettier --end-of-line lf --write .",
-		"build:blog": "cd blog; hugo --minify"
+		"change-eof-to-lf": "prettier --end-of-line lf --write ."
 	},
 	"devDependencies": {
 		"@playwright/test": "^1.22.2",
@@ -45,11 +44,11 @@
 		"cookie": "^0.4.1",
 		"marked": "^4.0.18"
 	},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/marcelocra/marcelocra.github.io.git"
-  },
-  "author": "Marcelo Almeida (@marcelocra)",
-  "license": "MIT",
-  "homepage": "https://github.com/marcelocra/marcelocra.github.io#readme"
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/marcelocra/marcelocra.github.io.git"
+	},
+	"author": "Marcelo Almeida (@marcelocra)",
+	"license": "MIT",
+	"homepage": "https://github.com/marcelocra/marcelocra.github.io#readme"
 }
