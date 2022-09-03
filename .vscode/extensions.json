@@ -1,9 +1,10 @@
 {
 	"recommendations": [
+		"bradlc.vscode-tailwindcss",
 		"dbaeumer.vscode-eslint",
 		"esbenp.prettier-vscode",
+		"golang.go",
 		"svelte.svelte-vscode",
-		"vscodevim.vim",
-		"bradlc.vscode-tailwindcss"
+		"vscodevim.vim"
 	]
 }

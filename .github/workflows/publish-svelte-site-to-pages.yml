@@ -1,5 +1,5 @@
 # Simple workflow for deploying static content to GitHub Pages
-name: Deploy static content to Pages
+name: Publish site to GitHub Pages
 
 # **What it does**: Builds the static site and deploy to GitHub pages.
 # **Why we have it**:
@@ -41,7 +41,7 @@ jobs:
         uses: actions/cache@v3
         with:
           path: node_modules
-          key: ${{ runner.os }}-build-${{ secrets.CACHE_RANDOM_STRING }}-${{ hashFiles('pnpm-lock.yaml') }}
+          key: ${{ runner.os }}-build-${{ secrets.SVELTEKIT_CACHE_RANDOM_STRING }}-${{ hashFiles('pnpm-lock.yaml') }}
 
       - name: Setup GitHub Pages
         uses: actions/configure-pages@v1
