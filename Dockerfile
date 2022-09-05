@@ -23,23 +23,9 @@ RUN wget https://raw.githubusercontent.com/marcelocra/.dotfiles/master/unix/.tmu
 
 
 # ------------------------------------------------------------------------------
-# - golang ---------------------------------------------------------------------
+# - Deno -----------------------------------------------------------------------
 # ------------------------------------------------------------------------------
-# Download, install and configure.
-RUN wget https://go.dev/dl/go1.19.linux-amd64.tar.gz
-RUN rm -rf /usr/local/go && tar -C /usr/local -xzf go1.19.linux-amd64.tar.gz
-ENV PATH="${PATH}:/usr/local/go/bin"
-
-
-# ------------------------------------------------------------------------------
-# - hugo -----------------------------------------------------------------------
-# ------------------------------------------------------------------------------
-RUN wget https://github.com/gohugoio/hugo/releases/download/v0.102.0/hugo_extended_0.102.0_Linux-64bit.tar.gz
-RUN tar -C /usr/local/bin -xzf hugo_extended_0.102.0_Linux-64bit.tar.gz
-
-
-# ------------------------------------------------------------------------------
-# - Node -----------------------------------------------------------------------
-# ------------------------------------------------------------------------------
-# Install NVM.
-RUN wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+# Install and setup.
+RUN curl -fsSL https://deno.land/install.sh | sh
+ENV DENO_INSTALL="${HOME}/.deno"
+ENV PATH="${DENO_INSTALL}/bin:${PATH}"
