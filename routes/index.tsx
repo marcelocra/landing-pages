@@ -1,11 +1,10 @@
 /** @jsx h */
-/** @jsxFrag h */
 import { h } from "preact";
 import { tw } from "@twind";
 
 export default function Home() {
   return (
-    <>
+    <div class={tw`m-3`}>
       <figure class={tw`rounded-xl`}>
         <img
           class={tw`w-32 h-32 md:w-48 md:h-auto rounded-full mx-auto drop-shadow-lg`}
@@ -19,8 +18,8 @@ export default function Home() {
             Marcelo Almeida
           </div>
           <div class={tw`px-1 text-left font-sans`}>
-            Olá! Meu nome é <strong>Marcelo</strong>, sou desenvolvedor e
-            <strong>em breve</strong>
+            Olá! Meu nome é <strong>Marcelo</strong>, sou desenvolvedor e{" "}
+            <strong>em breve</strong>{" "}
             aqui você poderá conferir meus principais projetos e mídias, só
             clicar nos itens abaixo.
           </div>
@@ -32,26 +31,27 @@ export default function Home() {
           <a
             class={tw`text-black p-3 border border-slate-300 rounded-md`}
             href={section.link ?? "#"}
-            onClick={() => {
-              if (section.link) {
-                return;
-              }
-
-              alert("🚧 Site em construção! Volte em breve!😉🚀🔥");
-            }}
           >
-            {section.title} &&
-            <div class={tw`text-xl font-bold`}>
-              {section.title}
-            </div>
-            {section.description} &&
-            <div class={tw`mt-2`}>
-              {section.description}
-            </div>
+            {section.title &&
+              (
+                <div
+                  class={tw`text-xl font-bold`}
+                  title={section.link ? "" : "Em construção"}
+                >
+                  {section.title}
+                  {section.link ? "" : "🚧"}
+                </div>
+              )}
+            {section.description &&
+              (
+                <div class={tw`mt-2`}>
+                  {section.description}
+                </div>
+              )}
           </a>
         ))}
       </div>
-    </>
+    </div>
   );
 }
 
@@ -64,7 +64,7 @@ const SECTIONS = [
   },
   {
     title: "Blog",
-    link: null,
+    link: "https://marcelocra-blog.deno.dev",
     description:
       "Aprenda sobre design de software, programação, ferramentas de desenvolvimento e produtividade, e muito mais.",
   },
