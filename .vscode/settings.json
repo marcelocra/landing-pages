@@ -2,5 +2,10 @@
   "deno.enable": true,
   "deno.lint": true,
   "editor.defaultFormatter": "denoland.vscode-deno",
+
+  "deno.codeLens.implementations": true,
+  "deno.codeLens.references": true,
+  "deno.codeLens.referencesAllFunctions": true,
+
   "typescript.tsserver.experimental.enableProjectDiagnostics": false
 }
