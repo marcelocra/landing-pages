@@ -14,6 +14,9 @@ export const handler: Handlers<Site> = {
   GET(_, ctx) {
     const { link } = ctx.params;
     const redirectUrl = shortLinks.get(link);
+
+    console.debug({ link, redirectUrl });
+
     if (!redirectUrl) {
       return ctx.render({ hasRedirect: false });
     }
