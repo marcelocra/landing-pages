@@ -1,7 +1,6 @@
-FROM node:16.16-slim
+FROM node:18.12.1
 
 RUN corepack enable
-RUN pnpm add -g pnpm
 
 ENV HOME="/root"
 
