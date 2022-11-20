@@ -41,6 +41,7 @@ export default function Home() {
               class={tw`hover:bg-purple-800 text-white p-3 border border-gray-400 rounded-md drop-shadow-md`}
               href={section.link ?? "#"}
               title={section.link ? "" : "Em construção"}
+              {...section.props}
             >
               {section.title &&
                 (
@@ -85,7 +86,17 @@ const SECTIONS = [
   },
   {
     title: "Instagram",
-    link: null,
-    description: "Conheça meu dia a dia.",
+    link: "https://instagram.com/marcelocralmeida",
+    description:
+      "Conheça o meu dia a dia :). *Spoiler*: não tem só programação lá",
+  },
+  {
+    title: "Mastodon",
+    link: "https://mastodon.social/@marcelocra",
+    description:
+      "Veja novidades do mundo da tecnologia e empreendedorismo com mais velocidade.",
+    props: {
+      rel: "me",
+    },
   },
 ];
