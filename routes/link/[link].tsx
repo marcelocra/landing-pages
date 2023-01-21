@@ -5,7 +5,7 @@ interface Site {
 }
 
 const shortLinks = new Map<string, string>([
-  ["gcm", "https://blog.marcelocra.dev/git-multiplos-usuarios"],
+  ["gcm", "https://marcelocra.dev/blog/git-multiplos-usuarios"],
 ]);
 
 export const handler: Handlers<Site> = {
@@ -23,7 +23,7 @@ export const handler: Handlers<Site> = {
   },
 };
 
-export default function Page({ hasRedirect }: PageProps<Site>) {
+export default function Page({ data: { hasRedirect } }: PageProps<Site>) {
   if (!hasRedirect) {
     return <h1>User not found</h1>;
   }
