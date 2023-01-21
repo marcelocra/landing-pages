@@ -1,15 +1,7 @@
-import { useState } from "preact/hooks";
-
-import DarkToggle from "../islands/DarkToggle.tsx";
-
 export default function Home() {
-  const [dark, setDark] = useState(false);
-
   return (
-    <main
-      class={`min-h-screen bg-gray-800 ${dark ? "dark" : ""}`}
-    >
-      <div class="max-w-4xl mx-auto p-4 grid grid-cols-1 gap-4">
+    <main class="min-h-screen bg-gray-800 p-4">
+      <div class="max-w-4xl mx-auto grid grid-cols-1 gap-4">
         <figure class="rounded-xl">
           <img
             class="md:(w-48 h-auto) w-32 h-32 rounded-full mx-auto"
@@ -19,11 +11,8 @@ export default function Home() {
             height="192"
           />
         </figure>
-        <div class="text(center white) text-4xl font-extrabold font-sans">
-          <DarkToggle setDark={() => setDark} />
-        </div>
-        <div class="grid grid-cols-12 text(center white) px-1 font-sans">
-          <div class="col-span-8 col-start-3">
+        <div class="grid grid-cols-6 text(center white) font-sans">
+          <div class="col-start-2 col-span-4">
             Olá! Meu nome é <strong>Marcelo</strong>, sou{" "}
             <strong>desenvolvedor e designer de software</strong>. Aqui você
             pode conferir meus projetos e mídias.

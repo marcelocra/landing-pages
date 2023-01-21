@@ -16,6 +16,18 @@ export const handler: Handlers<User | null> = {
     const user: User = await resp.json();
     return ctx.render(user);
   },
+  // GET(_, ctx) {
+  //   const { link } = ctx.params;
+  //   const redirectUrl = shortLinks.get(link);
+
+  //   console.debug({ link, redirectUrl });
+
+  //   if (!redirectUrl) {
+  //     return ctx.render({ hasRedirect: false });
+  //   }
+
+  //   return Response.redirect(redirectUrl, 307);
+  // },
 };
 
 export default function Page({ data }: PageProps<User | null>) {
