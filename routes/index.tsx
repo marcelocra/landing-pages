@@ -1,4 +1,3 @@
-import { tw } from "twind";
 import { useState } from "preact/hooks";
 
 import DarkToggle from "../islands/DarkToggle.tsx";
@@ -8,9 +7,9 @@ export default function Home() {
 
   return (
     <main
-      class={tw`min-h-screen bg-gray-800 ${dark ? "dark" : ""}`}
+      class={`min-h-screen bg-gray-800 ${dark ? "dark" : ""}`}
     >
-      <div class="max-w-4xl mx-auto p-4">
+      <div class="max-w-4xl mx-auto p-4 grid grid-cols-1 gap-4">
         <figure class="rounded-xl">
           <img
             class="md:(w-48 h-auto) w-32 h-32 rounded-full mx-auto"
@@ -19,36 +18,39 @@ export default function Home() {
             width="192"
             height="192"
           />
-          <div class="my-3 text(center white) space-y-4">
-            <div class="text-4xl font-extrabold font-sans">
-              <DarkToggle setDark={() => setDark} />
-            </div>
-            <div class="px-1 font-sans">
-              Olá! Meu nome é <strong>Marcelo</strong>, sou{" "}
-              <strong>desenvolvedor e designer de software</strong>. Aqui você
-              pode conferir meus projetos e mídias.
-            </div>
-          </div>
         </figure>
+        <div class="text(center white) text-4xl font-extrabold font-sans">
+          <DarkToggle setDark={() => setDark} />
+        </div>
+        <div class="grid grid-cols-12 text(center white) px-1 font-sans">
+          <div class="col-span-8 col-start-3">
+            Olá! Meu nome é <strong>Marcelo</strong>, sou{" "}
+            <strong>desenvolvedor e designer de software</strong>. Aqui você
+            pode conferir meus projetos e mídias.
+          </div>
+        </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           {SECTIONS.map((section) => (
             <a
-              class="hover:bg-purple-800 text-white p-3 border border-gray-400 rounded-md drop-shadow-md"
-              href={section.link ?? "#"}
+              class={`${
+                section.link
+                  ? "hover:bg-purple-800 text-white border-gray-400"
+                  : "cursor-not-allowed text-gray-500 border-gray-500"
+              } p-3 border rounded-md drop-shadow-md grid grid-cols-1 content-start`}
+              href={section.link ?? ""}
               title={section.link ? "" : "Em construção"}
               {...section.props}
             >
               {section.title &&
                 (
                   <div class="text-xl font-bold">
-                    {section.link ? "" : "🚧 "}
                     {section.title}
                   </div>
                 )}
               {section.description &&
                 (
-                  <div class="mt-2">
+                  <div>
                     {section.description}
                   </div>
                 )}
@@ -63,9 +65,18 @@ export default function Home() {
 const SECTIONS = [
   {
     title: "Blog",
-    link: "https://blog.marcelocra.dev",
+    link: "https://marcelocra.dev/blog",
     description:
       "Aprenda sobre design de software, programação, ferramentas de desenvolvimento e produtividade, e muito mais.",
+  },
+  {
+    title: "Mastodon",
+    link: "https://mastodon.social/@marcelocra",
+    description:
+      "Veja novidades do mundo da tecnologia e empreendedorismo com mais velocidade.",
+    props: {
+      rel: "me",
+    },
   },
   {
     title: "YouTube",
@@ -77,20 +88,5 @@ const SECTIONS = [
     link: null,
     description:
       "Fique por dentro de tudo que acontece no mundo do desenvolvimento! Saiba sobre novos artigos, blogs, vídeos e mais.",
-  },
-  {
-    title: "Instagram",
-    link: "https://instagram.com/marcelocralmeida",
-    description:
-      "Conheça o meu dia a dia :). *Spoiler*: não tem só programação lá",
-  },
-  {
-    title: "Mastodon",
-    link: "https://mastodon.social/@marcelocra",
-    description:
-      "Veja novidades do mundo da tecnologia e empreendedorismo com mais velocidade.",
-    props: {
-      rel: "me",
-    },
   },
 ];
