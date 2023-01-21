@@ -1,6 +1,3 @@
-/** @jsx h */
-import { h } from "preact";
-import { tw } from "@twind";
 import { Handlers, PageProps } from "$fresh/server.ts";
 
 const NAMES = ["Alice", "Bob", "Charlie", "Dave", "Eve", "Frank"];
@@ -25,7 +22,7 @@ export default function Page({ data }: PageProps<Data>) {
     <div>
       <form>
         <input
-          class={tw`m-1 px-1 border border-black`}
+          class="m-1 px-1 border border-black"
           type="text"
           name="q"
           value={query}

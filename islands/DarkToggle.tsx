@@ -1,7 +1,5 @@
-/** @jsx h */
-import { h } from "preact";
 import { StateUpdater, useState } from "preact/hooks";
-import { tw } from "@twind";
+import { tw } from "twind";
 
 interface DarkToggleProps {
   setDark: StateUpdater<boolean>;

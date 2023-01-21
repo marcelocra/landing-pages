@@ -1,14 +1,12 @@
-/** @jsx h */
-import { h } from "preact";
 import { Handlers, PageProps } from "$fresh/server.ts";
 
 interface Site {
-  hasRedirect: boolean
+  hasRedirect: boolean;
 }
 
 const shortLinks = new Map<string, string>([
   ["gcm", "https://blog.marcelocra.dev/git-multiplos-usuarios"],
-])
+]);
 
 export const handler: Handlers<Site> = {
   GET(_, ctx) {
@@ -20,7 +18,7 @@ export const handler: Handlers<Site> = {
     if (!redirectUrl) {
       return ctx.render({ hasRedirect: false });
     }
-  
+
     return Response.redirect(redirectUrl, 307);
   },
 };
