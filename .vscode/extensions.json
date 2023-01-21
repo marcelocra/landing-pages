@@ -1,6 +1,7 @@
 {
   "recommendations": [
     "denoland.vscode-deno",
-    "vscodevim.vim"
+    "vscodevim.vim",
+    "bradlc.vscode-tailwindcss"
   ]
 }
