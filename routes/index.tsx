@@ -14,7 +14,8 @@ export default function Home() {
         <div class="grid grid-cols-6 text(center white) font-sans">
           <div class="col-start-2 col-span-4">
             Olá! Meu nome é <strong>Marcelo</strong>, sou{" "}
-            <strong>desenvolvedor e designer de software</strong>. Aqui você
+            Engenheiro de Computação e trabalho com{" "}
+            <strong>design e desenvolvimento de software</strong>. Aqui você
             pode conferir meus projetos e mídias.
           </div>
         </div>

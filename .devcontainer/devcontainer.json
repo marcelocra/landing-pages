@@ -6,8 +6,8 @@
     "vscode": {
       "extensions": [
         "denoland.vscode-deno",
-        "vscodevim.vim",
-        "bradlc.vscode-tailwindcss"
+        "bradlc.vscode-tailwindcss",
+        "eamodio.gitlens"
       ]
     }
   }
