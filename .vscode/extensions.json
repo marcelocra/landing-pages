@@ -1,7 +1,9 @@
 {
   "recommendations": [
+    "EditorConfig.EditorConfig",
+    "bradlc.vscode-tailwindcss",
+    "dbaeumer.vscode-eslint",
     "denoland.vscode-deno",
-    "vscodevim.vim",
-    "bradlc.vscode-tailwindcss"
+    "esbenp.prettier-vscode"
   ]
 }

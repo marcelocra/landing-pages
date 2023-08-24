@@ -1,13 +1,17 @@
 {
   "name": "My Dockerfile",
-  "context": "..",
-  "dockerFile": "../Dockerfile",
+  "image": "marcelocra/dev-container:2023.08.24",
+
+  // "context": "..",
+  // "dockerFile": "../Dockerfile",
   "customizations": {
     "vscode": {
       "extensions": [
-        "denoland.vscode-deno",
+        "EditorConfig.EditorConfig",
         "bradlc.vscode-tailwindcss",
-        "eamodio.gitlens"
+        "dbaeumer.vscode-eslint",
+        "denoland.vscode-deno",
+        "esbenp.prettier-vscode"
       ]
     }
   }
